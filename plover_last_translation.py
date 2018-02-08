@@ -7,7 +7,7 @@ from plover.translation import Translator, Translation, Stroke
 
 def repeat_last_translation(translator: Translator, stroke: Stroke, macro_args: str) -> None:
     '''
-    Macro to repeat the last transition in Plover.
+    Macro to repeat the last translation in Plover.
 
     :param translator: The active Plover translator that is executing the macro.
     :type translator: plover.translation.Translator
