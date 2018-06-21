@@ -1,9 +1,8 @@
 Plover Last Translation
 =======================
 
-Macro plugins for
-`Plover <https://github.com/openstenoproject/plover>`__ to repeat
-output.
+Plugins for `Plover <https://github.com/openstenoproject/plover>`__ to
+repeat output.
 
 Installation
 ------------
@@ -23,8 +22,18 @@ The same method can be used for updating and uninstalling the plugin.
 Usage
 -----
 
-In order to use these plugins you just need to create dictionary entries
-of the form:
+**It is recommended that you use the meta plugins over the macro
+plugins**
+
+The meta plugins have the following format:
+
+.. code:: json
+
+    {
+        "example_stroke": "{:meta_name:meta_arg1,meta_arg2,...}"
+    }
+
+The macro plugins have the following format:
 
 .. code:: json
 
@@ -32,7 +41,7 @@ of the form:
         "example_stroke": "=macro_name:macro_arg1,macro_arg2,..."
     }
 
-The available macros are:
+The available names and arguments for both are:
 
 -  repeat_last_translation
 
@@ -57,17 +66,6 @@ The available macros are:
    -  Arguments
 
       1. Number of previous characters to output. Default is 1.
-
-Some quick examples of the various acceptable forms:
-
-.. code:: json
-
-    {
-        "1_translation_stroke": "=repeat_last_translation",
-        "1_translation_stroke": "=repeat_last_translation:",
-        "2_translations_stroke": "=repeat_last_translation:2",
-        "5_fragments_stroke": "=repeat_last_fragment:5,"
-    }
 
 For the difference between a word and a fragment, see the
 `RetroFormatter

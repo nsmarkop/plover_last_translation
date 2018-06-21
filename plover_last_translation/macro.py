@@ -8,19 +8,14 @@ from plover.formatting import RetroFormatter
 
 DELIM_ARGS = ','
 
-def repeat_last_translation(translator: Translator, stroke: Stroke, macro_args: str) -> None:
+def repeat_last_translation(translator: Translator, stroke: Stroke, args: str) -> None:
     '''
     Macro to repeat the last translation(s) in Plover.
 
     :param translator: The active Plover translator that is executing the macro.
-    :type translator: plover.translation.Translator
-
     :param stroke: The current stroke (what invoked this macro).
-    :type stroke: plover.translation.Stroke
-
-    :param macro_args: The optional arguments specified to the macro as a comma-delimited string.
-                       Piece 1: The number of previous translations to repeat. Default is 1.
-    :type macro_args: str
+    :param args: The optional arguments specified to the macro as a comma-delimited string.
+                 Piece 1: The number of previous translations to repeat. Default is 1.
     '''
 
     # Get the current state
@@ -30,7 +25,7 @@ def repeat_last_translation(translator: Translator, stroke: Stroke, macro_args: 
 
     # Process input
     try:
-        num_to_repeat = int(macro_args.split(DELIM_ARGS)[0])
+        num_to_repeat = int(args.split(DELIM_ARGS)[0])
     except:
         num_to_repeat = 1
 
@@ -39,19 +34,14 @@ def repeat_last_translation(translator: Translator, stroke: Stroke, macro_args: 
         repeated_translation = Translation(translation.strokes, translation.english)
         translator.translate_translation(repeated_translation)
 
-def repeat_last_word(translator: Translator, stroke: Stroke, macro_args: str) -> None:
+def repeat_last_word(translator: Translator, stroke: Stroke, args: str) -> None:
     '''
     Macro to repeat the last word(s) in Plover.
 
     :param translator: The active Plover translator that is executing the macro.
-    :type translator: plover.translation.Translator
-
     :param stroke: The current stroke (what invoked this macro).
-    :type stroke: plover.translation.Stroke
-
-    :param macro_args: The optional arguments specified to the macro as a comma-delimited string.
-                       Piece 1: The number of previous words to repeat. Default is 1.
-    :type macro_args: str
+    :param args: The optional arguments specified to the macro as a comma-delimited string.
+                 Piece 1: The number of previous words to repeat. Default is 1.
     '''
 
     # Get the current state
@@ -61,7 +51,7 @@ def repeat_last_word(translator: Translator, stroke: Stroke, macro_args: str) ->
 
     # Process input
     try:
-        num_to_repeat = int(macro_args.split(DELIM_ARGS)[0])
+        num_to_repeat = int(args.split(DELIM_ARGS)[0])
     except:
         num_to_repeat = 1
 
@@ -73,19 +63,14 @@ def repeat_last_word(translator: Translator, stroke: Stroke, macro_args: str) ->
         new_translation = Translation([stroke], word)
         translator.translate_translation(new_translation)
 
-def repeat_last_fragment(translator: Translator, stroke: Stroke, macro_args: str) -> None:
+def repeat_last_fragment(translator: Translator, stroke: Stroke, args: str) -> None:
     '''
     Macro to repeat the last fragments(s) in Plover.
 
     :param translator: The active Plover translator that is executing the macro.
-    :type translator: plover.translation.Translator
-
     :param stroke: The current stroke (what invoked this macro).
-    :type stroke: plover.translation.Stroke
-
-    :param macro_args: The optional arguments specified to the macro as a comma-delimited string.
-                       Piece 1: The number of previous fragments to repeat. Default is 1.
-    :type macro_args: str
+    :param args: The optional arguments specified to the macro as a comma-delimited string.
+                 Piece 1: The number of previous fragments to repeat. Default is 1.
     '''
 
     # Get the current state
@@ -95,7 +80,7 @@ def repeat_last_fragment(translator: Translator, stroke: Stroke, macro_args: str
 
     # Process input
     try:
-        num_to_repeat = int(macro_args.split(DELIM_ARGS)[0])
+        num_to_repeat = int(args.split(DELIM_ARGS)[0])
     except:
         num_to_repeat = 1
 
@@ -107,19 +92,14 @@ def repeat_last_fragment(translator: Translator, stroke: Stroke, macro_args: str
         new_translation = Translation([stroke], fragment)
         translator.translate_translation(new_translation)
 
-def repeat_last_character(translator: Translator, stroke: Stroke, macro_args: str) -> None:
+def repeat_last_character(translator: Translator, stroke: Stroke, args: str) -> None:
     '''
     Macro to repeat the last character(s) in Plover.
 
     :param translator: The active Plover translator that is executing the macro.
-    :type translator: plover.translation.Translator
-
     :param stroke: The current stroke (what invoked this macro).
-    :type stroke: plover.translation.Stroke
-
-    :param macro_args: The optional arguments specified to the macro as a comma-delimited string.
-                       Piece 1: The number of previous characters to repeat. Default is 1.
-    :type macro_args: str
+    :param args: The optional arguments specified to the macro as a comma-delimited string.
+                 Piece 1: The number of previous characters to repeat. Default is 1.
     '''
 
     # Get the current state
@@ -129,7 +109,7 @@ def repeat_last_character(translator: Translator, stroke: Stroke, macro_args: st
 
     # Process input
     try:
-        num_to_repeat = int(macro_args.split(DELIM_ARGS)[0])
+        num_to_repeat = int(args.split(DELIM_ARGS)[0])
     except:
         num_to_repeat = 1
 
